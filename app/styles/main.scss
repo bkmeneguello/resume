@@ -5,6 +5,98 @@
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
-  color: #000;
+  color: black;
   padding: 0.2em 0;
+}
+
+#content {
+    @extend .z-depth-5;
+    @include flexbox();
+    flex-direction: column;
+}
+
+#header, #body {
+    @include flexbox();
+}
+
+#photo {
+    background: gray;
+    img {
+        display: inherit;
+        width: 256px;
+        transition: all 200ms linear;
+    }
+}
+
+#contact {
+    background: silver;
+    flex: 1;
+    @extend .blue, darken-4
+}
+
+#skills {
+    width: 256px;
+    @extend .light-blue, accent-1
+}
+
+#details {
+    flex: 1;
+    padding: 0 40px;
+    background: white;
+
+    section {
+        @extend .z-depth-1;
+        padding: 40px;
+    }
+}
+
+.detail {
+    margin: 40px 0;
+}
+
+@media #{$medium-and-up} {
+    body {
+        background: url(../images/bg.jpg);
+        background-size: contain;
+    }
+    #content {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+@media #{$small-and-down} {
+    .container {
+        width: 100%;
+    }
+
+    #skills, #details {
+        width: 100%;
+    }
+}
+
+@media #{$small-and-down} and (orientation:portrait) {
+    #header, #body {
+        flex-direction: column;
+    }
+
+    #photo img, #contact {
+        width: 100%;
+    }
+
+    #contact {
+        height: 30px;
+    }
+}
+
+@media #{$small-and-down} and (orientation:landscape) {
+    #body {
+        flex-direction: column;
+    }
+
+    #photo {
+        img {
+            width: 100vh;
+        }
+    }
 }
