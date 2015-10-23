@@ -1,17 +1,32 @@
 extends layouts/default
 
 block content
+    -
+        var content = {
+            name: 'John Donner',
+            occupation: 'Donner',
+            linkedin: 'donner',
+            github: 'donner',
+            sections: [
+                {header: 'Teste1'},
+                {header: 'Teste2'},
+                {header: 'Teste3'}
+            ]
+        }
+
     #content.container
         #header
             #photo
-                img(src="images/photo.png")
+                img(src='images/photo.png')
             #contact
+                h1.name= content.name
+                h3.occupation= content.occupation
+                address
+                    .linkedin /#{content.linkedin}
+                    .github /#{content.github}
         #body
             #skills s
             #details
-                section.detail
-                    header d1
-                section.detail
-                    header d2
-                section.detail
-                    header d3
+                each section in content.sections
+                    section.detail
+                        header= section.header
