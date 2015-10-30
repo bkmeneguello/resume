@@ -6,10 +6,10 @@ $medium-screen: 1024px !default;
 // endbower
 
 .browserupgrade {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: black;
-  padding: 0.2em 0;
+    margin: 0.2em 0;
+    background: #ccc;
+    color: black;
+    padding: 0.2em 0;
 }
 
 #content {
@@ -67,6 +67,16 @@ $medium-screen: 1024px !default;
 
 .detail {
     margin: 40px 0;
+}
+
+address.social {
+    .soc {
+        margin: 0 .5ch 3px 0 !important;
+        height: 30px;
+    }
+    a {
+        color: white;
+    }
 }
 
 @media #{$large-and-up} {

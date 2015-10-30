@@ -1,32 +1,34 @@
 extends layouts/default
 
 block content
-    -
-        var content = {
-            name: 'Bruno Meneguello',
-            occupation: 'Desenvolvedor de Software',
-            linkedin: 'bkmeneguello',
-            github: 'bkmeneguello',
-            sections: [
-                {header: 'Teste1'},
-                {header: 'Teste2'},
-                {header: 'Teste3'}
-            ]
-        }
-
     #content.container
         #header
             #photo
                 img(src='images/photo.jpg')
             #contact
-                h1.name= content.name
-                h3.occupation= content.occupation
-                address
-                    .linkedin /#{content.linkedin}
-                    .github /#{content.github}
+                h1.name Bruno Meneguello
+                h3.occupation Desenvolvedor de Software
+                address.social
+                    .valign-wrapper
+                        .soc
+                            a.soc-linkedin(href='https://www.linkedin.com/in/bkmeneguello')
+                        a.valign(href='https://www.linkedin.com/in/bkmeneguello') /bkmeneguello
+                    .valign-wrapper(data-radius='0')
+                        .soc
+                            a.soc-github(href='https://github.com/bkmeneguello')
+                        a.valign(href='https://github.com/bkmeneguello') /bkmeneguello
         #body
-            #skills s
+            #skills
+                section
+                    header Conhecimento
+                section
+                    header Habilidades
+                section
+                    header Idiomas
             #details
-                each section in content.sections
-                    section.detail
-                        header= section.header
+                section.detail
+                    header Experiencia Profissonal
+                section.detail
+                    header Formação
+                section.detail
+                    header Interesses

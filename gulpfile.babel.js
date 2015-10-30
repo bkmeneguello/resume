@@ -93,7 +93,10 @@ gulp.task('fonts', () => {
   .pipe(gulp.dest('.tmp/fonts'))
   .pipe(gulp.dest('dist/fonts'));
 
-  gulp.src('bower_components/Materialize/font/**/*')
+  gulp.src([
+      'bower_components/Materialize/font/**/*',
+      'bower_components/soc.js/font/*'
+  ])
   .pipe(gulp.dest('.tmp/font'))
   .pipe(gulp.dest('dist/font'));
 });
